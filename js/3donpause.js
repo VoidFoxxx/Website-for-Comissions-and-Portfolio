@@ -11,7 +11,7 @@ directionalLightG36.position.set(5, 5, 5).normalize();
 sceneG36.add(directionalLightG36);
 
 const loaderG36 = new THREE.GLTFLoader();
-loaderG36.load('/models/G36C1DL.gltf', (gltf) => {
+loaderG36.load('../models/G36C1DL.gltf', (gltf) => {
     sceneG36.add(gltf.scene);
     gltf.scene.scale.set(1, 1, 1);
     gltf.scene.position.set(0, 0, 0);
@@ -55,7 +55,7 @@ directionalLightHead.position.set(5, 5, 5).normalize();
 sceneHead.add(directionalLightHead);
 
 const loaderHead = new THREE.GLTFLoader();
-loaderHead.load('/models/Head.gltf', (gltf) => {
+loaderHead.load('../models/Head.gltf', (gltf) => {
     sceneHead.add(gltf.scene);
     gltf.scene.scale.set(50, 50, 50);
     gltf.scene.position.set(0, 0, 0);

@@ -11,7 +11,7 @@ directionalLightCorvette.position.set(5, 5, 5).normalize();
 sceneCorvette.add(directionalLightCorvette);
 
 const loaderCorvette = new THREE.GLTFLoader();
-loaderCorvette.load('/models/StellarisCorvette.gltf', (gltf) => {
+loaderCorvette.load('../models/StellarisCorvette.gltf', (gltf) => {
     sceneCorvette.add(gltf.scene);
     gltf.scene.scale.set(20, 20, 20);
     gltf.scene.position.set(0, 0, 0);
@@ -55,7 +55,7 @@ directionalLightGTR.position.set(5, 5, 5).normalize();
 sceneGTR.add(directionalLightGTR);
 
 const loaderGTR = new THREE.GLTFLoader();
-loaderGTR.load('/models/R35GTR1.gltf', (gltf) => {
+loaderGTR.load('../models/R35GTR1.gltf', (gltf) => {
     sceneGTR.add(gltf.scene);
     gltf.scene.scale.set(35, 35, 35);
     gltf.scene.position.set(0, 0, 0);

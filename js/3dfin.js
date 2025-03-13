@@ -14,7 +14,7 @@ sceneGlock.add(directionalLight1);
 
 // Load a model for the first canvas
 const loaderGlock = new THREE.GLTFLoader();
-loaderGlock.load('/models/PG17V1.gltf', (gltf) => {
+loaderGlock.load('../models/PG17V1.gltf', (gltf) => {
     sceneGlock.add(gltf.scene);
     gltf.scene.scale.set(35, 35, 35);
     gltf.scene.position.set(0, 0, 0);
@@ -63,7 +63,7 @@ directionalLightTrain.position.set(5, 5, 5).normalize();
 sceneTrain.add(directionalLightTrain);
 
 const loaderTrain = new THREE.GLTFLoader();
-loaderTrain.load('/models/MTrain163.gltf', (gltf) => {
+loaderTrain.load('../models/MTrain163.gltf', (gltf) => {
     sceneTrain.add(gltf.scene);
     gltf.scene.scale.set(10, 10, 10);
     gltf.scene.position.set(0, 0, 0);
