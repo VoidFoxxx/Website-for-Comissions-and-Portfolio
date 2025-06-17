@@ -12,7 +12,7 @@ class Users extends Database {
                 'email'=>$email,
             );
             
-            $sql = "SELECT * FROM user WHERE email = :email";
+            $sql = "SELECT * FROM users WHERE email = :email";
             $query_run = $this->db->prepare($sql);
             $query_run->execute($data);
             if($query_run->rowCount() == 1) {
@@ -22,13 +22,13 @@ class Users extends Database {
             // Dáta pre vloženie nového používateľa do databázy
             $data = array(
                 'email' => $email,
-                'username' => $username,
+                'name' => $username,
                 'password' => password_hash($password, PASSWORD_DEFAULT),
                 'role'=>'user'
             );
     
             // SQL dopyt na vloženie nového používateľa
-            $sql = "INSERT INTO user (username, email, password,role) VALUES (:username, :email, :password, :role)";
+            $sql = "INSERT INTO users (name, email, password,role) VALUES (:name, :email, :password, :role)";
             $query_run = $this->db->prepare($sql);
             $query_run->execute($data);
     
@@ -47,17 +47,17 @@ class Users extends Database {
             $data = array(
                 'email'=>$email,
             );
-            
             $sql = "SELECT * FROM users WHERE email = :email";
             $query_run = $this->db->prepare($sql);
             $query_run->execute($data);
+            
             if($query_run->rowCount() == 1) {
                 $user = $query_run->fetch(PDO::FETCH_ASSOC);
-                if($password == $user['password']){
+                if(password_verify($password, $user['password'])){
                     $_SESSION['loggedIn'] = true;
                     $_SESSION['username'] = $user['name'];
                     $_SESSION['role'] = $user['role'];
-                    $_SESSION['userId'] = $user['ID'];
+                    $_SESSION['userId'] = $user['id'];
                     return true;
                 }
                 return false;
