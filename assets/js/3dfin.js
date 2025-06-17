@@ -18,7 +18,7 @@ loaderGlock.load('../models/PG17V1.gltf', (gltf) => {
     sceneGlock.add(gltf.scene);
     gltf.scene.scale.set(35, 35, 35);
     gltf.scene.position.set(0, 0, 0);
-    animate1();
+    animateGlock();
 }, undefined, (error) => {
     console.error('Error loading the model for canvas 1:', error);
 });
@@ -41,7 +41,7 @@ function resizeCanvasGlock() {
 }
 
 // Animation loop for the first scene
-function animate1() {
+function animateGlock() {
   requestAnimationFrame(animate1);
   controlsGlock.update();
   rendererGlock.render(sceneGlock, cameraGlock);
@@ -93,7 +93,7 @@ function animateTrain() {
 
 function resizeCanvas() {
     resizeCanvasGlock();
-    resizeCanvasTrain()
+    resizeCanvasTrain();
   }
   
   // Handle window resizing

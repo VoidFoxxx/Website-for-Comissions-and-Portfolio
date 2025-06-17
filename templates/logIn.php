@@ -1,12 +1,15 @@
-<?php include_once "partials/header.php"?>
-
+<?php include_once "partials/header.php";
+    require_once('../_inc/classes/Database.php');
+    require_once('../_inc/classes/Users.php');
+?>
+<div class="container3d">
     <div class="description">
         <h1>Log In</h1>
     </div>
     <div>
         <form method = "POST">
-            <input type="email" name = "email">
-            <input type="password" name = "password">
+            <input placeholder = "email@email.com" type="email" name = "email">
+            <input placeholder = "password" type="password" name = "password">
             <input type="submit" value="Log in" name = "userLogin">
         </form>
     </div>
@@ -22,8 +25,9 @@
                 header('Location: home.php');
                 exit;
             }else{
-                echo 'Nesprávne meno alebo heslo';
+                echo('Incorrect email or password.');
             }
         }
     ?>
+</div>
 <?php include_once "partials/footer.php"?>

@@ -1,6 +1,4 @@
 <?php
-    require_once('../_inc/classes/Database.php');
-    require_once('../_inc/classes/Users.php');
     session_start();
 ?>
 
@@ -14,7 +12,7 @@
 </head>
 <body>
     <div class="head">
-        <p>VoidFox</p>
+        <p style = "font-family: 'CloisterBlack'">VoidFox</p>
         <div>
             <a href="home.php">Main page</a>
             <a href="commissions.php">Commissions</a>
@@ -25,13 +23,18 @@
             <a href="projectHalted.php">Stopped projects</a>
             <?php 
                 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true){
+                    if($_SESSION['role'] == "admin"){
+                        echo('<a href="admin.php">admin</a>');
+                    }
                     echo($_SESSION['username']);
                     echo('<a href="logOut.php">Log out</a>');
                 }
                 else{
                     echo('<a href="logIn.php">Log in</a>');
+                    echo('<a href="register.php">Register</a>');
                 }
             ?>
+            
         </div>
     </div>
     <div class="content">
