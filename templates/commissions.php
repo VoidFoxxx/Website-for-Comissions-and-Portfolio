@@ -8,18 +8,31 @@ require_once('../_inc/classes/Commissions.php');
             <p>Commissions</p>
         </div>
         <form method = "POST">
-            <select name="type">
+                <label for="type">Type of model</label>
+                <select name="type">
                 <option value="character">Character</option>
                 <option value="object">Object</option>
                 <option value="vehicle">Vehicle</option>
                 <option value="other">Other</option>
             </select>
+            <label for="desciption">Description of model</label>
             <textarea name="description" placeholder = "description of model"></textarea>
+
+            <label for="complexity">Complexity of model</label>
             <input type="range" min = "0" max = "10" name = "complexity">
+
+            <label for="animation">Animation complexity</label>
             <input type="range" min = "0" max = "10" name = "animation">
+            
+            <label for="texture">Model texture</label>
             <input type="range" min = "0" max = "10" name = "texture">
+
+            <label for="bumpmap">Model bumpmap</label>
             <input type="range" min = "0" max = "10" name = "bumpmap">
+            
+            <label for="skeleton">Model skeleton</label>
             <input type="range" min = "0" max = "10" name = "skeleton">
+
             <?php
                 echo('<input type="hidden" value = "'.$_SESSION['userId'].'" name = "user_id">');
             ?>

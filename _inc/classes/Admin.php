@@ -41,6 +41,9 @@
         {
             try
             {
+                if ($inputs["table"] == "users"){
+                    $inputs["password"] = password_hash($inputs["password"], PASSWORD_DEFAULT);
+                }
                 $table = $inputs["table"];
                 unset($inputs["table"]);
                 $sql = "INSERT INTO $table (";
@@ -87,6 +90,9 @@
         {
             try
             {
+                if ($data["table"] == "users"){
+                    $data["password"] = password_hash($data["password"], PASSWORD_DEFAULT);
+                }
                 $table = $data["table"];
                 $id = $data["editId"];
                 $sql = "UPDATE $table SET ";
