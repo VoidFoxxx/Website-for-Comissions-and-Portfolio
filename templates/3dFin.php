@@ -31,6 +31,6 @@
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 
     
-<script type="module" src="../js/3dfin.js"></script>
+<script type="module" src="../assets/js/3dfin.js"></script>
 
 <?php include_once "partials/footer.php"?>

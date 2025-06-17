@@ -42,7 +42,7 @@ function resizeCanvasGlock() {
 
 // Animation loop for the first scene
 function animateGlock() {
-  requestAnimationFrame(animate1);
+  requestAnimationFrame(animateGlock);
   controlsGlock.update();
   rendererGlock.render(sceneGlock, cameraGlock);
 }
